@@ -13,42 +13,30 @@
 ***********************************************************************/
 
 /*
-1. feladat (3 pont)
+1. feladat (5 pont)
 
-Irj egy programot, amely a harom oldalhosszbol kiszamitja egy teglatest
-felszinet es terfogatat!
+A hupikek torpikek kirandulni mentek, es Dulifuli beleesett egy godorbe.
+Termeszetesen nem kialtott segitsegert, hanem egyedul akart kimaszni.
+Elso lendulettel felmaszott 10 torparaszt, majd lenezett, es lecsuszott,
+meghozza az eddig elert magassaganak 10%-t. (tehat 9 torparasz magassagban sikerult megkapaszkodnia)
+Ekkor masodszor is lenduletet vett, 20 araszt maszott, majd megint lenezett,
+es megint visszacsuszta az addig elert osszmagassaganak a 10%-at.
+Es igy tovabb, minden lenulettel 10 arasszal tobbet maszott felfele,
+de minden megallasnal az addigi osszmagassaganak 10%-at elvesztette.
 
-A program beolvas harom nemnegativ valos szamot a standard inputrol.
-Ezek a szamok a teglatest oldalhosszai. A program csak jo inputot kaphat,
-igy a hibakezelessel nem kell foglalkozni. A program outputja ket sor.
-Az elsoben a "V = " szoveg utan a teglatest terfogata, a masodik sorban
-az "A = " szoveg utan a teglatest felulete szerepel. Mindket szamot 10
-karakteren jobbra igazitva 3 tizedesjegy pontossaggal kell kiiratni.
-Ugyelj ra, hogy a kiiratast sorvege jel zarja es a program ne irjon ki
-mas egyebet a fentieken kivul!
-
-A terfogat es a felulet kiszamitasara erdemes lehet egy-egy kulon fuggvenyt
-kesziteni, esetleg felhasznalva a teglalap teruletenek kiszamitasat vegzo
-fuggvenyt is.
-
-A programot main helyett main_t neven keszitsd el,
-de a tartalma olyan legyen, mintha egy programot irnal!
+Irj fuggvenyt, melynek parametere a godor melysege (torparaszban),
+es egy egesz ertekkel ter vissza: azzal, hogy Dulifuli hanyadik lendulettel maszott ki a godorbol.
 */
 
-double terfogat(double a, double b, double c) {
-    return a * b * c;
+int hanyadiklendulet(int cel) {
+
+    
+
+    
+
 }
 
-double felszin(double a, double b, double c) {
-    return 2 * (a * b) + 2 * (b * c) + 2 * (c * a);
-}
 
-int main_t() {
-    double a, b, c;
-    scanf("%lf %lf %lf", &a, &b, &c);
-    printf("V = %10.3lf\nA = %10.3lf\n", terfogat(a, b, c), felszin(a, b, c));
-    return 0;
-}
 /***********************************************************************
 ************************************************************************
 **
@@ -59,18 +47,30 @@ int main_t() {
 
 void call_1()
 {
-  int check;
-  if((check = fgetc(stdin)) == EOF) {
-    fprintf(stderr, "HIBA: Nem olvasható adat!\n");
-    return;
-  }
-  if(main_t() && (check == 'R')) {
-    fputs("RETURNS NONZERO", stdout);
-  }
+    int n, eredmeny;
+    if (fscanf(stdin, "%d", &n) != 1) {
+        fprintf(stderr, "HIBA: Nem olvasható adat!\n");
+        return;
+    }
+    eredmeny = hanyadiklendulet(n);
+    fprintf(stdout, "%d\n", eredmeny);
 }
 void test_1()
 {
-    main_t();
+    struct { int cel; int lendulet; } testlist[] = {
+        {  5, 1 },
+        { 12, 2 },
+        { 58, 4 },
+        {  0, 0 }
+    };
+    for (int i = 0; testlist[i].cel; ++i) {
+        int r = hanyadiklendulet(testlist[i].cel);
+        if (r != testlist[i].lendulet) {
+            fprintf(stderr, "HIBA: hanyadiklendulet(%d) = %d\n"
+                            "\telvárt eredmény: %d",
+                            testlist[i].cel, r, testlist[i].lendulet);
+        }
+    }
 }
 
 typedef void (*call_function)();
