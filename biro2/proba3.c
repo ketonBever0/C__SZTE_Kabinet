@@ -50,14 +50,24 @@ A fuggveny nem vegez IO muveleteket!
 
 void strtorles(char str[]) {
 
-    int length = 0;
+    // int length = 0;
     int i = 0;
 
     while (str[i] != '\n') {
 
         i++;
-        printf(str[i]);
+
     }
+
+    char shortStr[];
+
+    for (j = 0; j < length; j++)
+    {
+        if (i % 2 == 0) {
+            shortStr[j] = str[j];
+        }
+    }
+    
     
 
 
