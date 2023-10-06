@@ -30,9 +30,20 @@ es egy egesz ertekkel ter vissza: azzal, hogy Dulifuli hanyadik lendulettel masz
 
 int hanyadiklendulet(int cel) {
 
-    
+    double altitude = 10.00;
+    int climb = 10;
+    int boost = 1;
 
-    
+    while (cel > altitude) {
+        climb += 10;
+        altitude -= altitude * 0.10;
+        boost++;
+        altitude += climb;
+        // printf("%lf %d %d\n", altitude, boost, cel);
+    }
+
+    return boost;
+
 
 }
 
