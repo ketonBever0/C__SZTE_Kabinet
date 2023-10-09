@@ -87,7 +87,7 @@ A fuggveny nem vegez IO muveleteket!
 
 void strtorles(char str[]) {
 
-
+    
 
 }
 
