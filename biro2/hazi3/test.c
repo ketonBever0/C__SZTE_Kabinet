@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define MAX_ARR_SIZE 100
+
 int atlag(int bemenet[], int magassag)
 {
 
@@ -12,19 +14,19 @@ int atlag(int bemenet[], int magassag)
 
     int tooHigh = 0;
 
-    int newArr[] = {};
+    int newArr[MAX_ARR_SIZE] = {};
 
-    int helper = 0;
 
     int i = 0;
+    int j = 0;
     while (i < arrLen)
     {
         if (bemenet[i] > magassag)
         {
-            // helper = bemenet[i];
-            // newArr[i] = helper;
-            newArr[i] = bemenet[i];
             tooHigh++;
+            newArr[j] = bemenet[i];
+            j++;
+            
         }
         i++;
     }
@@ -35,25 +37,27 @@ int atlag(int bemenet[], int magassag)
         arrLen++;
     }
 
-    printf("%d\n", arrLen);
+    // printf("%d\n", arrLen);
 
-    printf("eljut");
+    if(arrLen == 0) return 0;
 
-    // for (int i = 0; i < arrLen; i++)
-    // {
-    //     printf("%d ", newArr[i]);
-    // }
+    int sum = 0;
+    for (int i = 0; i < arrLen; i++)
+    {
+        // printf("%d ", newArr[i]);
+        sum += newArr[i];
+    }
+    int avg = sum / arrLen;
 
-    return arrLen;
+    return avg;
 }
 
 int main()
 {
 
-    int arr[] = {3, 5, 20, 50, 60, 0};
+    int arr[] = {12, 32, 16, 40, 21, 0};
 
     // printf("Atlag vizmagassag: ");
-    printf("%d\n", atlag(arr, 30));
-
+    printf("%d\n", atlag(arr, 21));
     return 0;
 }
