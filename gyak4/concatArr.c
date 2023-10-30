@@ -14,16 +14,13 @@ int concat(int arr1[], int result[], int arr2[], int len1, int len2)
     result[i] = arr2[j];
     j++;
   }
-  
+
   // for (int i = 0; i < len1 + len2; i++)
   // {
   //   printf("%d\n", result[i]);
   // }
-  
 
   return len1 + len2;
-
-
 }
 
 int main()

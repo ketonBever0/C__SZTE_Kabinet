@@ -83,6 +83,13 @@ void cut(char str[], int from, int to) {
 
 }
 
+// char[1000] asd() {
+
+//     char[1000] testStr = "asd";
+
+//     return testStr;
+// }
+
 void titkosit(char bemenet[], char kimenet[]) {
 
 
@@ -108,7 +115,7 @@ void titkosit(char bemenet[], char kimenet[]) {
         }
         
     }
-    
+
 
 
 
