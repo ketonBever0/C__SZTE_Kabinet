@@ -50,36 +50,34 @@ int terulet(LEGO_lap lap)
 void rendez(LEGO_lap LEGO_lapok[], int n)
 {
 
-    printf("NEM rendezett:\n");
+    /* printf("NEM rendezett:\n");
     for (int i = 0; i < n; i++)
     {
         printf("%d\n", terulet(LEGO_lapok[i]));
-    }
+    } */
 
     int kicsi_index;
     LEGO_lap csere;
 
-
     for (int i = 0; i < n - 1; i++)
     {
-        for (int j = i + 1; j < n; j++)
+        for (int j = 0; j < n - i - 1; j++)
         {
 
-            if (terulet(LEGO_lapok[j]) > terulet(LEGO_lapok[i]))
+            if (terulet(LEGO_lapok[j]) > terulet(LEGO_lapok[j + 1]))
             {
                 csere = LEGO_lapok[j];
-                LEGO_lapok[j] = LEGO_lapok[i];
-                LEGO_lapok[i] = csere;
+                LEGO_lapok[j] = LEGO_lapok[j + 1];
+                LEGO_lapok[j + 1] = csere;
             }
-
         }
     }
 
-    printf("Rendezett:\n");
+    /* printf("Rendezett:\n");
     for (int i = 0; i < n; i++)
     {
         printf("%d\n", terulet(LEGO_lapok[i]));
-    }
+    } */
 }
 
 #endif
