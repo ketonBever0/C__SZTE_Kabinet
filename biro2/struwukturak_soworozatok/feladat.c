@@ -207,13 +207,22 @@ a legkorábbi olyan eset legyen, ahol számítás nélkül lehet tudni a visszat
 #define return fprintf(stdout, "0");return
 
 int i = 0;
-int osszkar = 0;
+float osszkar = 0;
 
 float karbecsles(float karok[], int darabszam) {
 
-    if(i < darabszam) osszkar += karok[i];
+    if(i >= darabszam) {
+        /* printf("osszkar: %f\n", osszkar); */
+        float eredmeny = osszkar;
+        i = 0;
+        osszkar = 0;
+        return eredmeny;
+    }
 
-    return osszkar;
+    /* printf("%f\n", karok[i]); */
+    osszkar += karok[i];
+    i++;
+    karbecsles(karok, darabszam);
 }
 
 #undef return
