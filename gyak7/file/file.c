@@ -29,8 +29,8 @@ int main()
     }
 
     /* out = scanf("%d", &num); */
-
-    if (fprintf(out, "%d" num * 2) == 0)
+    /* fprintf(out, "%d", num * 2); */
+    if (fprintf(out, "%d", num * 2) == 0)
     {
         printf("File writing failed!");
         return -4;

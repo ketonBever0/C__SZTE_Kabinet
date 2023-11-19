@@ -35,22 +35,23 @@ A fuggveny nem vegez IO muveleteket!
 
 char* karakterek(char tomb[], int* bBetuk) {
 
-    int aHelye;
-
-
+    /* int aHelye; */
+    *bBetuk = 0;
 
     for (int i = 0; tomb[i] != '\0'; i++)
     {
-        if(tomb[i] == 'A') aHelye = i;
-
-        if(tomb[i] == 'b' || tomb[i] == 'B') ++bBetuk;
+        /* printf("%c", tomb[i]); */
+        /* printf("\n%d\n", bBetuk); */
+        if(tomb[i] == 'b' || tomb[i] == 'B') *bBetuk += 1;
 
     }
 
-    printf("A mutatott helyen (%p) allo karakter: %c\n", &aHelye, tomb[aHelye]);
 
+    /* printf("A mutatott helyen (%ld) allo karakter: %c\n", aHelye, tomb[aHelye]); */
 
-    return 0;
+    for (int i = 0; tomb[i] !='\0'; i++) {
+        if(tomb[i] == 'A') return &tomb[i];
+    }
 
 
 }
