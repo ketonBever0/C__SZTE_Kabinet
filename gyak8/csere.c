@@ -23,9 +23,9 @@ int main()
   int x = 3, y = 5;
   int *p = &x, *q = &y;
 
-  printf("A függvény előtt: x = %d, y = %d\n", x, y);
+  printf("A fuggveny elott: x = %d, y = %d\n", x, y);
   csere(&x, &y);
-  printf("A függvény után: x = %d, y = %d\n", x, y);
+  printf("A fuggveny utan: x = %d, y = %d\n", x, y);
 
   return 0;
 }
