@@ -12,7 +12,15 @@ int main()
         return -1;
     }
 
-    int meret = 20;
+    char **sor = malloc(sizeof(char *));
+
+    /* char *sor = malloc(sizeof(char)); */
+
+    for (int i = 0;; i++)
+    {
+        sor[i] = malloc(sizeof(char));
+        fscanf(fBe, "%c", sor[i]);
+    }
 
     fclose(fBe);
 
