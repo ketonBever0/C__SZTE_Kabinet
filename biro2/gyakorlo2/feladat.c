@@ -94,10 +94,13 @@ int main()
         {
             for (int j = 0; j < oszlop; j++)
             {
-                printf("%3c", tabla[i][j]);
+                /* printf("%3c", tabla[i][j]); */
+                fprintf(fKi, "%c", tabla[i][j]);
+                /* printf("s%d o%d\n", i, j); */
             }
-            printf("\n");
+            /* printf("\n"); */
         }
+        fprintf(fKi, "\n");
 
         break;
     }
