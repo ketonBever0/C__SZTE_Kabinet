@@ -4,14 +4,14 @@
 int main()
 {
 
-    int meret = 5;
+    int sor = 5, oszlop = 10;
     int novel = 1;
 
-    int **szam = malloc(sizeof(int *) * meret);
-    for (int i = 0; i < meret; i++)
+    int **szam = malloc(sizeof(int *) * sor);
+    for (int i = 0; i < sor; i++)
     {
-        szam[i] = malloc(sizeof(int) * meret);
-        for (int j = 0; j < meret; j++)
+        szam[i] = malloc(sizeof(int) * oszlop);
+        for (int j = 0; j < oszlop; j++)
         {
             szam[i][j] = novel;
             printf("%3d", szam[i][j]);
@@ -21,21 +21,21 @@ int main()
     }
 
     printf("\nVizszintes tukrozes\n");
-    for (int i = 0; i < meret; i++)
+    for (int i = 0; i < sor; i++)
     {
-        for (int j = 0; j < meret; j++)
+        for (int j = 0; j < oszlop; j++)
         {
-            printf("%3d", szam[meret - i - 1][j]);
+            printf("%3d", szam[sor - i - 1][j]);
         }
         printf("\n");
     }
 
     printf("\nFuggoleges tukrozes\n");
-    for (int i = 0; i < meret; i++)
+    for (int i = 0; i < sor; i++)
     {
-        for (int j = 0; j < meret; j++)
+        for (int j = 0; j < oszlop; j++)
         {
-            printf("%3d", szam[i][meret - j - 1]);
+            printf("%3d", szam[i][oszlop - j - 1]);
         }
         printf("\n");
     }
